@@ -43,6 +43,19 @@ class TagCollection
     }
 
     /**
+     * @param array $globalTags
+     */
+    public function setGlobalTags($globalTags)
+    {
+        if(!is_array($globalTags)) {
+            $globalTags = [$globalTags];
+        }
+        foreach($globalTags as $tag) {
+            $this->add($tag);
+        }
+    }
+
+    /**
      * Prepends tag with configured prefix.
      * To prevent key collision if you use the same
      * cache server for several Craft installations.

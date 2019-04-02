@@ -95,6 +95,7 @@ class Plugin extends BasePlugin
         /* @var \ostark\upper\TagCollection $collection */
         $collection = $this->get('tagCollection');
         $collection->setKeyPrefix($this->getSettings()->getKeyPrefix());
+        $collection->setGlobalTags($this->getSettings()->getGlobalTags());
 
         return $collection;
     }

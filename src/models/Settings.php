@@ -57,6 +57,14 @@ class Settings extends Model
      */
     public $keyPrefix = '';
 
+
+    /**
+     * Global tags
+     *
+     * @var array
+     */
+    public $globalTags = [];
+
     // Public Methods
     // =========================================================================
 
@@ -108,6 +116,21 @@ class Settings extends Model
 
         $clean = Inflector::slug($this->keyPrefix);
         return substr($clean, 0, 8);
+    }
+
+    /**
+     * Get global tags.
+     * For clearing all Craft objects at once.
+     *
+     * @return array
+     */
+    public function getGlobalTags()
+    {
+        if (!$this->globalTags) {
+            return [];
+        }
+
+        return array_map('Inflector::slug', $this->globalTags);
     }
 
     /**

@@ -22,6 +22,11 @@ return [
     // 1-8 characters, special chars get removed
     'keyPrefix'     => getenv('UPPER_KEY_PREFIX') ?: '',
 
+
+    // Optional global tags to include on every response.
+    // Useful if you want to clear Craft objects at once
+    'globalTags'    => getenv('UPPER_GLOBAL_TAGS') ?: [],
+
     // Drivers settings
     'drivers'       => [
 
